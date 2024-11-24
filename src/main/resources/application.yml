@@ -1,0 +1,11 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://43.136.49.79/address_book?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true
+    username: address_book
+    password: 123456789
+  jackson:
+    time-zone: GMT+8
