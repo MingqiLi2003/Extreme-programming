@@ -188,7 +188,7 @@
     };
 
     const handleDelete = async (record) => {
-        await request.delete(`addrbook/${record.id}`);
+        await request.post(`${record.id}`);
 
         getBook();
     };
@@ -200,8 +200,9 @@
     };
 
     const erportExcel = async () => {
-        await request.post('http://localhost:8080/exportToExcel');
-
+        const { data } = await request.post('http://localhost:8080/exportToExcel');
+        // window.open('http://localhost:8080/'+data.data);
+        alert("导出成功!");
     };
 
     const fileList = ref([]);
@@ -218,7 +219,7 @@
     getBook();
     };
     function handleDrop(e) {
-    console.log(e);
+        getBook();
     }
 
 
